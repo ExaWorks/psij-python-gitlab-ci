@@ -1,11 +1,11 @@
 stages:
-  - test
+  - upload-to-dashboard
 
 Tests:
-  stage: test
+  stage: upload-to-dashboard
   rules:
 #    - if: $CI_PIPELINE_SOURCE == 'schedule'
-   - if: $CI_COMMIT_BRANCH == "psij-gitlab-integration"
+   - if: $CI_PIPELINE_SOURCE == 'schedule' || $CI_COMMIT_BRANCH == "psij-gitlab-integration" 
   parallel:
     matrix:
       - HOST : [ "quartz", "ruby"]
