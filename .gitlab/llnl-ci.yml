@@ -4,7 +4,8 @@ stages:
 Tests:
   stage: test
   rules:
-   - if: $CI_PIPELINE_SOURCE == 'schedule' 
+#    - if: $CI_PIPELINE_SOURCE == 'schedule'
+   - if: $CI_COMMIT_BRANCH == "psij-gitlab-integration"
   parallel:
     matrix:
       - HOST : [ "quartz", "ruby"]
