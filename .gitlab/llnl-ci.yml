@@ -33,14 +33,14 @@ Tests:
    - sed -i 's/maintainer_email =/maintainer_email = arambula2@llnl.gov/g' testing.conf
    - sed -i "s/id = hostname/id = \"$HOST.llnl.gov\"/g" testing.conf
    - sed -i "s/key = random/key = \"$SITE_KEY\"/g" testing.conf
-   - pwd
-   - ls -la
-   - ls -la htmlcov
+#    - pwd
+#    - ls -la
+#    - ls -la htmlcov
    # uncomment below to enable minimal uploads
    - sed -i "s/minimal_uploads = false/minimal_uploads = true/g" testing.conf
    - ./psij-ci-run
 
-  artifacts: 
-     name: "$CI_JOB_NAME_$HOST"
-     paths:
-       - $CI_PROJECT_DIR/psij-python3-venv/psij-python/htmlcov
+#   artifacts: 
+#      name: "$CI_JOB_NAME_$HOST"
+#      paths:
+#        - $CI_PROJECT_DIR/psij-python3-venv/psij-python/htmlcov
